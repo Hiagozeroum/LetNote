@@ -6,7 +6,7 @@
 		<title>LetNote</title>
 		
 		<!-- JQuery -->
-		<script src="../../public/js/jquery-2.2.1.js"></script>
+		<script src="js/jquery-2.2.1.js"></script>
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -42,27 +42,55 @@
 		</nav>
 
 
-	    <div class="container">           
+	    <div class="container">
+		
+			<% if(validacao.length > 0) { %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-danger">
+							<strong>Atenção!</strong>
+							<ul>
+								<% for(var i = 0; i < validacao.length; i++) { %>
+									<li><%= validacao[i].msg %></li>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<% } %>
 	    	<div class="row">
-	    	<!--	<% for(var i = 0; i < notas.length; i++) { %> -->
-		    		<div class="col-md-4">
-		    			<div class="nota_wrapper">
-							<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-							<p class="nota_titulo"> Titulo da nota </p> <hr style="border-top:1px solid black;">
-			    			<br />
-			    			<p class="nota_conteudo">
-							<!--	<%= noticias[i].resumo %> -->
-							<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea> 
-			    			</p>
-			    		</div>
-			    	</div>
-			<!--    <% } %>    -->
-	    	</div>
+	    		<div class="col-md-12">
+	    			<form action="/noticias/salvar" method="post">
+						<div class="form-group">
+							<label for="titulo">Título:</label>
+							<input type="text" class="form-control" id="titulo" name="titulo">
+						</div>
 
-	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="form_nota">Adicionar nota</a></button>
-	    	</div>
+						<div class="form-group">
+							<label for="pwd">Resumo:</label>
+							<input type="text" class="form-control" id="resumo" name="resumo">
+						</div>
+						
+						<div class="form-group">
+							<label for="pwd">Autor:</label>
+							<input type="text" class="form-control" id="autor" name="autor">
+						</div>
 
+						<div class="form-group">
+							<label for="pwd">Data:</label>
+							<input type="date" class="form-control" id="data_noticia" name="data_noticia">
+						</div>
+
+						<div class="form-group">
+							<label for="pwd">Notícia:</label>
+							<textarea class="form-control" id="noticia" name="noticia"></textarea>
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Cadastrar</button>
+						</form>
+		    	</div>
+	    	</div>
 	    </div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
