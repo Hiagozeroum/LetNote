@@ -22,7 +22,7 @@ notasDAO.prototype.salvarNota = function(nota, callback){
 	this._connection.query('insert into nota set ? ', nota, callback)
 }
 
-//Adicionar função pra editar nota
+
 
 module.exports = function(){
 	return notasDAO;

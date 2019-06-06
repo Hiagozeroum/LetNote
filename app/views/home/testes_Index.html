@@ -16,6 +16,11 @@
 
 		<!-- favicon -->
 		<link rel="shortcut icon" href="../../public/images/favicon.ico" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="../../public/css/mdb.min.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -48,7 +53,7 @@
 		    		<div class="col-md-4">
 		    			<div class="nota_wrapper">
 							<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-							<p class="nota_titulo"> Lista de compras do mês inteiro para todo sempre </p>	<hr>
+							<p class="nota_titulo"> Lista de compras </p>	<hr>
 			    			<br />
 			    			<p class="nota_conteudo">
 							<!--	<%= noticias[i].resumo %> -->
@@ -56,34 +61,34 @@
 			    			</p>
 			    		</div>
 			    	</div>
-						<div class="col-md-4">
-							<div class="nota_wrapper">
-							<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-							<p class="nota_titulo"> Titulo da nota </p>
-							<hr>
-								<br />
-								<p class="nota_conteudo">
-							<!--	<%= noticias[i].resumo %> -->
-							<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
-								</p>
-							</div>
+					<div class="col-md-4">
+						<div class="nota_wrapper">
+						<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
+						<p class="nota_titulo"> Titulo da nota </p>
+						<hr>
+							<br />
+							<p class="nota_conteudo">
+						<!--	<%= noticias[i].resumo %> -->
+						<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
+							</p>
 						</div>
-						<div class="col-md-4">
-							<div class="nota_wrapper">
-							<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-							<p class="nota_titulo"> Titulo da nota </p>	<hr >
-								<br />
-								<p class="nota_conteudo">
-							<!--	<%= noticias[i].resumo %> -->
-							<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
-								</p>
-							</div>
+					</div>
+					<div class="col-md-4">
+						<div class="nota_wrapper">
+						<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
+						<p class="nota_titulo"> Titulo da nota </p>	<hr >
+							<br />
+							<p class="nota_conteudo">
+						<!--	<%= noticias[i].resumo %> -->
+						<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
+							</p>
 						</div>
+					</div>
 			<!--    <% } %>    -->
 	    	</div>
 
-	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="form_nota">Adicionar nota</a></button>
+	    	<div class="ver_mais">
+	    		<button type="button" class="btn btn-primary" onclick="form_no	ta">Adicionar nota</button>
 	    	</div>
 
 	    </div>

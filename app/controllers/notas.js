@@ -6,11 +6,9 @@ module.exports.notas_salvar = function(application, req, res){
 	var noticia = req.body;
 
 	req.assert('nome','O nome da nota é obrigatório').notEmpty();
-	req.assert('resumo','Resumo é obrigatório').notEmpty();
-	req.assert('resumo','Resumo deve conter entre 10 e 100 caracteres').len(10, 100);
-	req.assert('autor','Autor é obrigatório').notEmpty();
-	req.assert('data_noticia','Data é obrigatório').notEmpty().isDate({format: 'YYYY-MM-DD'});
-	req.assert('noticia','Noticia é obrigatório').notEmpty();
+	req.assert('conteudo','O Conteúdo é obrigatório').notEmpty();
+//	req.assert('data_noticia','Data é obrigatório').notEmpty().isDate({format: 'YYYY-MM-DD'});
+	req.assert('tipo','O Tipo é obrigatorio').notEmpty();
 
 	var erros = req.validationErrors();
 
@@ -22,7 +20,7 @@ module.exports.notas_salvar = function(application, req, res){
 	var connection = application.config.dbConnection();
 	var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
-	noticiasModel.salvarNoticia(noticia, function(error, result){
-		res.redirect('/noticias');
+	noticiasModel.salvarNota(nota, function(error, result){
+		res.redirect('/index');
 	});	
 }
