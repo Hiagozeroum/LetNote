@@ -22,6 +22,10 @@ notasDAO.prototype.salvarNota = function(nota, callback){
 	this._connection.query('insert into nota set ? ', nota, callback)
 }
 
+notasDAO.prototype.deletarNota = function(nota, callback){
+	this._connection.query("DELETE FROM nota WHERE id='"+id.id, nota, callback)
+}
+
 
 
 module.exports = function(){

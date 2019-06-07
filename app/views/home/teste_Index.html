@@ -28,6 +28,7 @@
 
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
+
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
@@ -35,7 +36,10 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<img src="../../public/images/logo.png" />
+					<div class="row" style="overflow: auto" ><h1 style="font-size: 100px">LetNote</h1>
+						<img src="../../public/images/logo.png" />
+					</div>	
+					
 					
 				</div>
 
@@ -50,46 +54,54 @@
 
 	    <div class="container">
 	    	<div class="row">
-	    	<!--	<% for(var i = 0; i < notas.length; i++) { %> -->
+
 		    		<div class="col-md-4">
 		    			<div class="nota_wrapper">
-							<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-							<p class="nota_titulo"> Lista de compras </p>	<hr>
+							
+							<p class="nota_titulo"> Nota 1 </p>	<hr>
 			    			<br />
 			    			<p class="nota_conteudo">
-							<!--	<%= noticias[i].resumo %> -->
+		
 							<textarea name="conteudo" rows="10" cols="40" maxlength="500"
-							class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> blablablalembrete </textarea>
-			    			</p>
+							class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> Conteudo n1</textarea>
+							</p>
+							<form action="/form_editar_nota" method="post">
+								<button  type="submit" class="btn btn-primary">Editar</button>
+							</form>	
 			    		</div>
 			    	</div>
 					<div class="col-md-4">
 						<div class="nota_wrapper">
-						<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-						<p class="nota_titulo"> Titulo da nota </p>
+					
+						<p class="nota_titulo"> Nota 2 </p>
 						<hr>
 							<br />
 							<p class="nota_conteudo">
-						<!--	<%= noticias[i].resumo %> -->
+	
 						<textarea name="conteudo" rows="10" cols="40" maxlength="500" 
-						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> blablablalembrete </textarea>
-								
-					</p>
-						</div>
+						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> Conteudo n2 </textarea>		
+						</p>
+						<form action="/form_editar_nota" method="post">
+							<button  type="submit" class="btn btn-primary">Editar</button>
+						</form>	
+					</div>
 					</div>
 					<div class="col-md-4" >
 						<div class="nota_wrapper" >
-						<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
-						<p class="nota_titulo"> Titulo da nota </p>	<hr >
+					
+						<p class="nota_titulo"> Nota 3 </p>	<hr >
 							<br />
 							<p class="nota_conteudo">
-						<!--	<%= noticias[i].resumo %> -->
+	
 						<textarea name="conteudo" rows="10" cols="40" maxlength="500"
-						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)" > blablablalembrete </textarea>
-							</p>
-						</div>
+						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)" > Conteudo n3 </textarea>
+						</p>
+						<form action="/form_editar_nota" method="post">
+							<button  type="submit" class="btn btn-primary">Editar</button>
+						</form>	
 					</div>
-			<!--    <% } %>    -->
+					</div>
+	
 	    	</div>
 
 	    	<div class="botao_unico">
@@ -97,6 +109,7 @@
 					<button  type="submit" class="btn btn-primary" style="background-color: #F45E5F"
 					>Adicionar nota</button>
 				</form>
+
 	    	</div>
 			
 			

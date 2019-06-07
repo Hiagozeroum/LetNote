@@ -34,3 +34,10 @@ a:hover{
 	background:#e9fce8;
 	padding:20px;
 }
+@font-face {
+	font-family: typew;
+	src: url('../typewcond_regular.otf');
+}
+h1{
+	font-family: typew;
+}

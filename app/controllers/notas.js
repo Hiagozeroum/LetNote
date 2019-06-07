@@ -2,12 +2,32 @@ module.exports.form_criar_nota = function(application, req, res){
 	res.render("notas/form_add_nota", {validacao : {}, nota : {}});
 }
 
+module.exports.form_editar_nota = function(application, req, res){
+	var connection = application.config.dbConnection();
+	var notasModel = new application.app.models.notasDAO(connection);
+
+	notasModel.getNotas(function(error, result){
+		res.render("notas/form_edit_nota", {nota : result,validacao : {}});
+	});	
+}
+
+module.exports.notas_excluir = function(application, req, res){
+	var connection = application.config.dbConnection();
+	var notasModel = new application.app.models.notasDAO(connection);
+
+	notasModel.deletarNotaa(function(error, result){
+		res.redirect('/index');
+	});	
+
+}
+
+
 module.exports.notas_salvar = function(application, req, res){
-	var notas = req.body;
+	var nota = req.body;
 
 	req.assert('nome','O nome da nota é obrigatório').notEmpty();
 	req.assert('conteudo','O Conteúdo é obrigatório').notEmpty();
-	req.assert('tipo','O Tipo é obrigatorio').notEmpty();
+//	req.assert('tipo','O Tipo é obrigatorio').notEmpty();
 
 	var erros = req.validationErrors();
 
@@ -25,7 +45,7 @@ module.exports.notas_salvar = function(application, req, res){
 }
 
 module.exports.notas_editar = function(application, req, res){
-	var notas = req.body;
+	var nota = req.body;
 
 	req.assert('nome','O nome da nota é obrigatório').notEmpty();
 	req.assert('conteudo','O Conteúdo é obrigatório').notEmpty();
