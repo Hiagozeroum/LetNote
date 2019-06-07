@@ -16,6 +16,7 @@
 
 		<!-- favicon -->
 		<link rel="shortcut icon" href="../../public/images/favicon.ico" />
+
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <!-- Bootstrap core CSS -->
         <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
         <link href="../../public/css/mdb.min.css" rel="stylesheet">
 	</head>
 
-	<body>
+	<body class="body">
 
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
@@ -34,8 +35,8 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-
 					<img src="../../public/images/logo.png" />
+					
 				</div>
 
 				<div id="navbar" class="navbar-collapse collapse">
@@ -57,7 +58,8 @@
 			    			<br />
 			    			<p class="nota_conteudo">
 							<!--	<%= noticias[i].resumo %> -->
-							<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
+							<textarea name="conteudo" rows="10" cols="40" maxlength="500"
+							class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> blablablalembrete </textarea>
 			    			</p>
 			    		</div>
 			    	</div>
@@ -69,28 +71,36 @@
 							<br />
 							<p class="nota_conteudo">
 						<!--	<%= noticias[i].resumo %> -->
-						<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
-							</p>
+						<textarea name="conteudo" rows="10" cols="40" maxlength="500" 
+						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)"> blablablalembrete </textarea>
+								
+					</p>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="nota_wrapper">
+					<div class="col-md-4" >
+						<div class="nota_wrapper" >
 						<!--	<a href="nota?id_nota=<%= notas[i].id_nota %>" class="nota_titulo"><%= notas[i].titulo %></a>-->
 						<p class="nota_titulo"> Titulo da nota </p>	<hr >
 							<br />
 							<p class="nota_conteudo">
 						<!--	<%= noticias[i].resumo %> -->
-						<textarea name="conteudo" rows="10" cols="40" maxlength="500"> blablablalembrete </textarea>
+						<textarea name="conteudo" rows="10" cols="40" maxlength="500"
+						class="md-textarea form-control" style="background-color: rgb(252, 248, 228)" > blablablalembrete </textarea>
 							</p>
 						</div>
 					</div>
 			<!--    <% } %>    -->
 	    	</div>
 
-	    	<div class="ver_mais">
-	    		<button type="button" class="btn btn-primary" onclick="form_no	ta">Adicionar nota</button>
+	    	<div class="botao_unico">
+				<form action="/form_criar_nota" method="post">
+					<button  type="submit" class="btn btn-primary" style="background-color: #F45E5F"
+					>Adicionar nota</button>
+				</form>
 	    	</div>
-
+			
+			
+			</form>
 	    </div>
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

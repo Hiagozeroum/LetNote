@@ -4,6 +4,11 @@ module.exports = function(application){
 	});
 
 	application.post('/notas/salvar', function(req, res){
-		application.app.controllers.admin.notas_salvar(application, req, res);
+		application.app.controllers.notas.notas_salvar(application, req, res);
 	});
+
+	application.post('/notas/editar', function(req, res){
+		application.app.controllers.notas.notas_editar(application, req, res);
+	});
+	
 }

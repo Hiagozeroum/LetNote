@@ -13,7 +13,7 @@ notasDAO.prototype.getNota = function(id, callback){
 	this._connection.query('select * from nota where id = ' + id.id, callback);
 }
 
-notasDAO.prototype.editaNota = function(id, callback){
+notasDAO.prototype.editarNota = function(id, callback){
 	console.log(id.id);
 	this._connection.query("update nota SET nome='"+nota.nome+"',conteudo='"+nota.conteudo+"'where id = "+ id.id, callback);
 }
